@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.text.TextUtils" />
+
+        <variable
+            name="vm"
+            type="com.hunliji.mvvm.activity.activity_main.MainVm" />
+
+        <variable
+            name="v"
+            type="com.hunliji.mvvm.activity.activity_main.MainActivity" />
+
+        <import type="com.hunliji.hlj_image.RoundedCornersTransformation.CornerType" />
+
+        <import type="android.widget.ImageView.ScaleType" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/base"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:onClick="@{v::onClick}"
+            android:text="@{vm.title}" />
+
+        <TextView
+            android:id="@+id/loading"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:onClick="@{v::onClick}"
+            android:text="loading" />
+
+        <TextView
+            android:id="@+id/success"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:onClick="@{v::onClick}"
+            android:text="success" />
+
+        <TextView
+            android:id="@+id/empty"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:onClick="@{v::onClick}"
+            android:text="empty" />
+
+        <TextView
+            android:id="@+id/error"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:onClick="@{v::onClick}"
+            android:text="error" />
+
+        <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="600dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:orientation="vertical">
+                <!--                <ImageView-->
+                <!--                    circle="@{true}"-->
+                <!--                    strokeWidth="@{10}"-->
+                <!--                    imageUrl="@{vm.gifUrl}"-->
+                <!--                    strokeColor="@{@color/hlj_image_colorPrimary}"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="200dp"-->
+                <!--                    android:layout_marginTop="10dp"-->
+                <!--                    android:contentDescription="@string/app_name" />-->
+
+                <!--                <ImageView-->
+                <!--                    imageUrl="@{vm.gifUrl}"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="200dp"-->
+                <!--                    android:layout_marginTop="10dp"-->
+                <!--                    android:contentDescription="@string/app_name" />-->
+
+                <ImageView
+                    circle="@{true}"
+                    imageUrl="@{vm.gifUrl}"
+                    strokeColor="@{@color/hlj_image_colorPrimary}"
+                    strokeWidth="@{1.5f}"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="10dp"
+                    android:contentDescription="@string/app_name" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="110dp"
+                android:background="#000000" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="320dp"
+                android:background="#000000" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="#000000" />
+        </FrameLayout>
+
+        <!--        <ImageView-->
+        <!--            circle="@{true}"-->
+        <!--            corner="@{10}"-->
+        <!--            cornerType="@{CornerType.OTHER_BOTTOM_RIGHT}"-->
+        <!--            height="@{vm.height}"-->
+        <!--            imageUrl="@{vm.imgErrorUrl}"-->
+        <!--            strokeColor="@{@color/hlj_image_colorPrimary}"-->
+        <!--            strokeWidth="@{1.5f}"-->
+        <!--            width="@{vm.deviceWidth}"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="200dp"-->
+        <!--            android:layout_marginStart="0.5dp"-->
+        <!--            android:layout_marginTop="10dp"-->
+        <!--            android:layout_marginEnd="0.5dp"-->
+        <!--            android:contentDescription="@string/app_name" />-->
+    </LinearLayout>
+</layout>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="presenter"
+            type="com.hunliji.recyclerview.ItemClickPresenter" />
+
+        <variable
+            name="item"
+            type="com.hunliji.mvvm.activity.activity2.RefreshItemVm" />
+
+        <variable
+            name="position"
+            type="Integer" />
+
+        <variable
+            name="lifecycle"
+            type="com.hunliji.mvvm.activity.activity2.Activity2" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/press"
+            angle="@{225}"
+            endColor='@{"#D81B60"}'
+            leftTopCorner="@{10}"
+            pressEndColor='@{"#ffffff"}'
+            pressStartColor='@{"#FADB56"}'
+            startColor='@{"#008857"}'
+            strokeColor='@{"#ffffff"}'
+            strokeWidth="@{0.5f}"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:gravity="center"
+            android:onClick="@{(v)->presenter.onItemClick(v,position,item)}"
+            android:text="@{item.title}" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/sp_oval_confirm_info_dot1"
+            android:gravity="center"
+            android:text="@{item.title}"
+            android:visibility="gone" />
+
+        <ImageView
+            circle="@{true}"
+            imageUrl="@{item.imgUrl}"
+            lifecycle="@{lifecycle}"
+            strokeColor="@{@color/hlj_image_colorPrimary}"
+            strokeWidth="@{0.5f}"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+             />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/colorAccent" />
+    </LinearLayout>
+</layout>

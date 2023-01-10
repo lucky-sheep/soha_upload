@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="presenter"
+            type="com.hunliji.recyclerview.ItemClickPresenter" />
+
+        <variable
+            name="item"
+            type="com.hunliji.mvvm.activity.activity2.HeaderItemVm" />
+
+        <variable
+            name="position"
+            type="Integer" />
+
+        <variable
+            name="lifecycle"
+            type="com.hunliji.mvvm.activity.activity2.Activity2" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.youth.banner.Banner
+            android:id="@+id/banner"
+            click="@{(v,position,item)->presenter.onItemClick(v,position,item)}"
+            list="@{item.bean}"
+            android:layout_width="match_parent"
+            android:layout_height="250dp" />
+    </LinearLayout>
+</layout>

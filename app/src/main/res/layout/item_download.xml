@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="presenter"
+            type="com.hunliji.recyclerview.ItemClickPresenter" />
+
+        <variable
+            name="item"
+            type="com.hunliji.mvvm.activity.activity2.DownLoadItemVm" />
+
+        <variable
+            name="position"
+            type="Integer" />
+
+        <variable
+            name="lifecycle"
+            type="com.hunliji.mvvm.activity.activity2.DownLoadActivity" />
+    </data>
+
+    <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/item_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{(v)->presenter.onItemClick(v,position,item)}"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/image"
+            imageUrl="@{item.bean.imageUrl}"
+            lifecycle="@{lifecycle}"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:contentDescription="@string/app_name" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/image"
+            android:layout_toRightOf="@id/image"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{item.bean.title}" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
+            android:layout_below="@id/title"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/image"
+            android:layout_toRightOf="@id/image"
+            android:max="100"
+            android:progress="@{item.progressLD}"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/bytes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:text="@{item.bytes}" />
+    </RelativeLayout>
+</layout>

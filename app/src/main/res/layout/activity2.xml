@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.hunliji.mvvm.activity.activity2.Activity2Vm" />
+
+        <variable
+            name="v"
+            type="com.hunliji.mvvm.activity.activity2.Activity2" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+       >
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/refresh"
+            onRefresh="@{v}"
+            refreshing="@{vm.listState}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:orientation="vertical"
+                android:overScrollMode="never"
+                android:scrollbars="none" />
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+        <com.hunliji.toolbar_helper.ToolbarHelper
+            current="@{vm.current}"
+            endColor='@{"#ffffff"}'
+            scrollEndColor='@{"#2b333b"}'
+            scrollStartColor='@{"#ff008857"}'
+            startColor='@{"#008857"}'
+            total="@{vm.total}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:gravity="center"
+                    android:text="这是标题" />
+
+                <FrameLayout
+                    android:id="@+id/back"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/common_hamburg"
+                        android:tint="@color/white" />
+                </FrameLayout>
+            </RelativeLayout>
+        </com.hunliji.toolbar_helper.ToolbarHelper>
+    </FrameLayout>
+</layout>
