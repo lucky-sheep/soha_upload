@@ -6,8 +6,8 @@ package com.hunliji.hlj_download.upload.model
 
 data class TokenInfo(
 
-    val resultMsg:String?= null,
-    val resultCode: Int = 0,
+    val msg:String?= null,
+    val code: Int = 0,
     val data:UploadInfo? = null
 
 
