@@ -11,6 +11,6 @@ internal class UploadConstant {
         const val BLOCK_SIZE = 4.toLong() * 1024 * 1024
         const val CHUNK_SIZE = 256.toLong() * 1024
         const val putThreshold = 4 * 1024 * 1024
-        const val GLOBAL_TOKEN_PATH = "api/user/collection"
+        const val GLOBAL_TOKEN_PATH = "api/sdk/qiniuToken"
     }
 }
