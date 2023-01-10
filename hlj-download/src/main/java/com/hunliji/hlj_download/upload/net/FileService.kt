@@ -15,7 +15,7 @@ import retrofit2.http.*
  */
 internal interface FileService {
 
-    @GET
+    @POST
     suspend fun getToken(@Url url: String): JsonObject
 
     @POST("http://up.qiniu.com")
