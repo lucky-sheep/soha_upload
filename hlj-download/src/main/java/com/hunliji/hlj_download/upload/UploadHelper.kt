@@ -321,7 +321,7 @@ object UploadHelper : CoroutineScope by MainScope() {
     private fun parseToken(jsonObject: JsonObject): UploadInfo {
         Log.e("live_download", "jsonObject:$jsonObject")
         val fromJson = GsonUtils.fromJson(jsonObject.toString(), TokenInfo::class.java)
-        if (fromJson.resultCode ==10000 && fromJson.data != null){
+        if (fromJson.code ==10000 && fromJson.data != null){
             this.uploadInfo = fromJson.data
             Domain.doamin = this.uploadInfo?.imageHostUrl
             return fromJson.data
